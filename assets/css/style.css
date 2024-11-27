@@ -681,51 +681,58 @@ body {
   #BLOG
 \*-----------------------------------*/
 
-/* Blog Section */
+/* Blog sekcija */
 .blog {
   padding: 40px 0;
+  background-color: #f8f8f8; /* Pozadina */
 }
 
 .blog .section-title {
-  font-size: 2.5rem; /* Manja veličina fonta za naslov */
+  font-size: 2rem;
   background-color: goldenrod;
   padding: 10px;
-  border-top-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-radius: 25px;
   color: black;
   font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .blog .section-text {
+  font-size: 2rem;
   font-weight: bold;
   color: black;
-  font-size: 1.6rem;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
+/* Stil za raspored blog kartica */
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px; /* Razmak između kartica */
+  justify-content: space-between; /* Automatski raspoređuje kartice */
 }
 
+/* Raspored blog kartica */
 .blog-card {
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Da kartice zauzmu celu visinu kolone */
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
-  margin-bottom: 20px;
-  max-width: 100%;
 }
 
 .blog-card:hover {
-  transform: translateY(-10px); /* Efekat na hover */
+  transform: translateY(-10px); /* Efekat podizanja prilikom hover-a */
 }
 
+/* Slika unutar kartice */
 .card-banner {
-  height: 200px; /* Smanjena visina slike */
+  height: 250px;
   overflow: hidden;
   position: relative;
 }
@@ -733,78 +740,69 @@ body {
 .card-banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Slika se pokrije unutar okvira */
+  object-fit: cover;
 }
 
 .card-content {
   padding: 20px;
+  flex-grow: 1; /* Da sadržaj popuni preostali prostor */
 }
 
 .card-content .card-title {
-  font-size: 1.8rem; /* Manja veličina naslova */
+  font-size: 2rem;
   font-weight: bold;
   color: #333;
-  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 15px;
 }
 
 .card-meta-wrapper {
-  font-size: 1.4rem;
-  color: #777;
   display: flex;
   align-items: center;
+  margin-right: 15px;
 }
 
 .card-meta-wrapper ion-icon {
-  font-size: 1.6rem;
   margin-right: 5px;
 }
 
-.card-meta-wrapper:hover {
-  color: goldenrod;
+.card-meta-wrapper span {
+  font-weight: normal;
 }
 
-/* Responsive adjustments */
+/* Raspored kartica u jednom redu */
+.col-12 {
+  width: 100%;
+}
+
+.col-md-6 {
+  width: 48%;
+  box-sizing: border-box;
+}
+
+.col-lg-4 {
+  width: 30%;
+  box-sizing: border-box;
+}
+
+/* Prilagodljivost */
 @media (max-width: 768px) {
-  .blog .section-title {
-    font-size: 2rem; /* Manji font na mobilnim uređajima */
-    padding: 10px;
-  }
-
-  .blog .section-text {
-    font-size: 1.4rem; /* Manji tekst */
-    margin-top: 15px;
-  }
-
-  .card-banner {
-    height: 150px; /* Smanjena visina slike na mobilnim uređajima */
-  }
-
-  .card-content .card-title {
-    font-size: 1.6rem; /* Manja veličina naslova na mobilnim uređajima */
-  }
-
-  .card-meta-wrapper {
-    font-size: 1.2rem;
+  .col-md-6 {
+      width: 48%; /* Dva proizvoda u redu */
   }
 }
 
-/* Prilagodba za veće ekrane */
-@media (min-width: 768px) {
-  .row {
-    gap: 20px;
-  }
-
-  .col-12.col-md-6.col-lg-4 {
-    flex: 1 1 30%; /* 3 kolone na tabletima i desktopu */
+@media (max-width: 576px) {
+  .col-md-6 {
+      width: 100%; /* Jedan proizvod u redu */
   }
 }
+
 
 
 
