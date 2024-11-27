@@ -143,16 +143,18 @@
         - #ABOUT
       -->
 
+      
       <section class="section about" aria-label="about" id="about">
         <div class="container">
-
-            <div class="wrapper">
-                <figure class="about-banner">
-                    <img src="./assets/img/gelea_about_beli.png" alt="Gelea Cosmetics" class="responsive-img">
-                </figure>
-                <div class="about-content">
+            <div class="row align-items-center">
+                <!-- Koristimo d-flex za centriranje slike -->
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <figure class="about-banner">
+                        <img src="./assets/img/gelea_about_beli.png" alt="Gelea Cosmetics" class="img-fluid">
+                    </figure>
+                </div>
+                <div class="col-12 col-md-6">
                     <h2 class="h2 section-title title-lg">Gelea - Siguran kvalitet sapuna</h2>
-                    <h3 class="h2 section-title title-md">Gelea - O nama i čime se mi tačno bavimo?</h3>
                     <p class="section-text">
                         Gelea Cosmetics je brend kozmetičkih proizvoda, poreklom iz Švajcarske koji se već godinama unazad trudi da obezbedi najbolji kvalitet kozmetike svojim potrošačima upotrebom organskih i non-gmo sirovina poput Shea buttera, maslinovog, palminog ili kokosovog ulja. 
                         Gelea Sapuni predstavljaju glavni fokus naše linije proizvoda, pomoću kojih ciljamo da održimo vašu kožu mekom, glatkom i bez nepravilnosti. 
@@ -169,80 +171,86 @@
 
 
 
-
       <!-- 
         - #COLLECTION
       -->
 
       <section class="section collection text-center" aria-labelledby="collection-label" id="collection">
         <div class="container">
-
-         <h2 class="h2 section-title" id="collection-label" style="background-color: goldenrod; padding: 5px; border-top-left-radius: 25px; border-bottom-right-radius: 25px; color: black; font-weight: bold;">
-            Gelea - Naši proizvodi
-          </h2>
-
-          <p class="section-text" style="font-weight: bold; color: black; font-size: 18px;">
-            Istražite našu pažljivo izrađenu kolekciju ručno rađenih sapuna, svakog od kojih kombinuje prirodne sastojke i jedinstvene mirisne note za savršeno iskustvo nege kože
-          </p>
-
-          <ul class="grid-list">
-            <li class="grid-item">
-              <div class="collection-card">
-                <figure class="card-banner img-holder" style="--width: 500; --height: 550;">
-                  <img src="./assets/img/braon_sapun.jpg" width="500" height="550" loading="lazy" alt="Pottery & Ceramics" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Šumski lešnik</h3>
-                  <p class="card-text"> šumski lešnik - sapun pravljen od mesavine maslinovog i palminog ulja sa neodoljivom aromom lešnika.</p>
-                  <a href="#" class="btn"><span class="span">Cena 390 dinara</span></a>
+            <h2 class="h2 section-title" id="collection-label">
+                Gelea - Naši proizvodi
+            </h2>
+    
+            <p class="section-text">
+                Istražite našu pažljivo izrađenu kolekciju ručno rađenih sapuna, svakog od kojih kombinuje prirodne sastojke i jedinstvene mirisne note za savršeno iskustvo nege kože.
+            </p>
+    
+            <!-- Grid lista proizvoda sa responzivnim rasporedom -->
+            <div class="row">
+                <!-- Prvi proizvod -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="collection-card">
+                        <figure class="card-banner img-holder d-flex justify-content-center">
+                            <img src="./assets/img/braon_sapun.jpg" class="img-fluid" alt="Šumski lešnik" loading="lazy">
+                        </figure>
+                        <div class="card-content">
+                            <h3 class="card-title">Šumski lešnik</h3>
+                            <p class="card-text">Sapun pravljen od mešavine maslinovog i palminog ulja sa neodoljivom aromom lešnika.</p>
+                            <span class="btn">Cena 390 dinara</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-            <li class="grid-item">
-              <div class="collection-card">
-                <figure class="card-banner img-holder" style="--width: 500; --height: 550;">
-                  <img src="./assets/img/limun_sapun.jpg" width="500" height="550" loading="lazy" alt="Leather Craft" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Limun - Zelena jabuka</h3>
-                  <p class="card-text">limun -zelena jabuka -  sapun na bazi Shea buttera , idealan za ljude koje vole blage voćne mirise citrusa.</p>
-                  <a href="#" class="btn"><span class="span">Cena 390 dinara</span></a>
+    
+                <!-- Drugi proizvod -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="collection-card">
+                        <figure class="card-banner img-holder d-flex justify-content-center">
+                            <img src="./assets/img/limun_sapun.jpg" class="img-fluid" alt="Limun - Zelena jabuka" loading="lazy">
+                        </figure>
+                        <div class="card-content">
+                            <h3 class="card-title">Limun - Zelena jabuka</h3>
+                            <p class="card-text">Sapun na bazi Shea buttera, idealan za ljude koji vole blage voćne mirise citrusa.</p>
+                            <span class="btn">Cena 390 dinara</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-            <li class="grid-item">
-              <div class="collection-card">
-                <figure class="card-banner img-holder" style="--width: 500; --height: 550;">
-                  <img src="./assets/img/mermer_sapun.jpg" width="500" height="550" loading="lazy" alt="Home Decoration" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Mermer tehnika</h3>
-                  <p class="card-text">specijalna “mermer” tehnika izrade sapuna , osnova je maslinovo ulje. Sapun moze imati aromu po želji kupca.</p>
-                  <a href="#" class="btn"><span class="span">Cena 370 dinara</span></a>
+    
+                <!-- Treći proizvod -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="collection-card">
+                        <figure class="card-banner img-holder d-flex justify-content-center">
+                            <img src="./assets/img/mermer_sapun.jpg" class="img-fluid" alt="Mermer tehnika" loading="lazy">
+                        </figure>
+                        <div class="card-content">
+                            <h3 class="card-title">Mermer tehnika</h3>
+                            <p class="card-text">Specijalna tehnika izrade sapuna sa aromom po želji kupca.</p>
+                            <span class="btn">Cena 370 dinara</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-            <li class="grid-item">
-              <div class="collection-card">
-                <figure class="card-banner img-holder" style="--width: 500; --height: 550;">
-                  <img src="./assets/img/vanila_sapun.jpg" width="500" height="550" loading="lazy" alt="Home Decoration" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Vanilla-dark Chocollate</h3>
-                  <p class="card-text"> vanilla-dark chocollate sapun pravljen od palminog ulja i Shea buttera .Sadrzi aktivni ugalj koji odlicno uklanja mrtve ćelije kože i omogućuje rast i regeneraciju novih ćelija.</p>
-                  <a href="#" class="btn"><span class="span">Cena 390 dinara</span></a>
+    
+                <!-- Četvrti proizvod -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="collection-card">
+                        <figure class="card-banner img-holder d-flex justify-content-center">
+                            <img src="./assets/img/vanila_sapun.jpg" class="img-fluid" alt="Vanilla-dark Chocolate" loading="lazy">
+                        </figure>
+                        <div class="card-content">
+                            <h3 class="card-title">Vanilla-dark Chocolate</h3>
+                            <p class="card-text">Sapun sa aktivnim ugljem, Shea butterom i palminim uljem, odličan za regeneraciju kože.</p>
+                            <span class="btn">Cena 390 dinara</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-          
+            </div>
         </div>
-      </section>
-
-
-
-
-
+    </section>
+    
+    
+    
+    
+    
+    
       <!-- 
         - #FEATURES
       -->
@@ -574,7 +582,7 @@
             </div>
 
             <!-- Četvrti Blog Post -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="col-8 col-md-6 col-lg-4 mb-4">
               <div class="blog-card">
                 <figure class="card-banner img-holder">
                   <img src="./assets/img/svi_sapuni.jpg" alt="Homemade Business That Now Makes Hundreds Of Millions" class="img-fluid img-cover" />
@@ -667,7 +675,7 @@
     - #FOOTER
   -->
 
-  <footer class="footer" id="contact" style="background-color: black;">
+  <footer class="footer" id="contact">
     <div class="container">
 
       <div class="section footer-top">
@@ -753,11 +761,6 @@
             Pitanje ili povratna informacija? Voleli bismo da čujemo od vas.
           </p>
 
-          <a href="#hero" class="btn">
-            <span class="span">Vrati se na početnu</span>
-
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-          </a>
 
         </div>
 

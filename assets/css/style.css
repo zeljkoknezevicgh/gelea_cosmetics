@@ -493,21 +493,36 @@ body {
   #COLLECTION
 \*-----------------------------------*/
 
-.collection .section-text { margin-block: 20px 60px; }
-
-.collection-card .card-banner {
-  border-radius: 250px 250px 20px 20px;
-  max-width: 70%;
-  margin-inline: auto;
-  overflow: hidden;
+.collection .section-text { 
+  margin-block: 20px 60px; 
 }
 
-.collection-card .card-title { margin-block: 20px; }
+.collection-card .card-banner {
+  
+  max-width: 30%; /* Obezbeđuje da širina slike bude u skladu sa roditeljskim kontejnerom */
+  margin-inline: auto;
+  overflow: hidden; /* Osećaće se sigurno unutar zaobljenih ivica */
+  height: auto; /* Postavljamo fiksnu visinu za slike */
+}
+
+.collection-card .card-banner img {
+  width: 100%; /* Slika će uvek popuniti celu širinu roditeljskog div-a */
+  height: auto; /* Visina slike će biti fiksirana na visinu roditelja */
+  object-fit: cover; /* Slika će popuniti roditeljsku oblast, zadržavajući proporcije */
+  object-position: center; /* Centriranje slike unutar kontejnera */
+  margin-top: 15px;
+}
+
+.collection-card .card-title { 
+  margin-block: 20px; 
+}
 
 .collection-card .btn {
   margin-inline: auto;
   margin-block-start: 24px;
 }
+
+
 
 
 
@@ -666,40 +681,129 @@ body {
   #BLOG
 \*-----------------------------------*/
 
-.blog .section-text { margin-block: 20px 36px; }
-
-.blog .grid-list { gap: 30px; }
-
-.blog-card .card-banner { border-radius: 50px 50px 0 0; }
-
-.blog-card .img-cover { will-change: transform; }
-
-.blog-card:is(:hover, :focus-within) .img-cover {
-  transform: scale(1.05) rotate(2deg);
-  opacity: 0.8;
+/* Blog Section */
+.blog {
+  padding: 40px 0;
 }
 
-.blog-card .card-content { padding: 10px; }
+.blog .section-title {
+  font-size: 2.5rem; /* Manja veličina fonta za naslov */
+  background-color: goldenrod;
+  padding: 10px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  color: black;
+  font-weight: bold;
+}
 
-.blog-card .card-title { margin-block: 8px 20px; }
+.blog .section-text {
+  font-weight: bold;
+  color: black;
+  font-size: 1.6rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 
-.blog-card :is(.card-meta, .card-meta-wrapper) {
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px); /* Efekat na hover */
+}
+
+.card-banner {
+  height: 200px; /* Smanjena visina slike */
+  overflow: hidden;
+  position: relative;
+}
+
+.card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Slika se pokrije unutar okvira */
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content .card-title {
+  font-size: 1.8rem; /* Manja veličina naslova */
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card-meta-wrapper {
+  font-size: 1.4rem;
+  color: #777;
   display: flex;
   align-items: center;
 }
 
-.blog-card .card-meta {
-  flex-wrap: wrap;
-  column-gap: 40px;
+.card-meta-wrapper ion-icon {
+  font-size: 1.6rem;
+  margin-right: 5px;
 }
 
-.blog-card .card-meta-wrapper { gap: 8px; }
+.card-meta-wrapper:hover {
+  color: goldenrod;
+}
 
-.blog-card .card-meta-wrapper ion-icon { color: var(--french-bistre); }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog .section-title {
+    font-size: 2rem; /* Manji font na mobilnim uređajima */
+    padding: 10px;
+  }
 
-.blog .btn {
-  margin-block-start: 80px;
-  margin-inline: auto;
+  .blog .section-text {
+    font-size: 1.4rem; /* Manji tekst */
+    margin-top: 15px;
+  }
+
+  .card-banner {
+    height: 150px; /* Smanjena visina slike na mobilnim uređajima */
+  }
+
+  .card-content .card-title {
+    font-size: 1.6rem; /* Manja veličina naslova na mobilnim uređajima */
+  }
+
+  .card-meta-wrapper {
+    font-size: 1.2rem;
+  }
+}
+
+/* Prilagodba za veće ekrane */
+@media (min-width: 768px) {
+  .row {
+    gap: 20px;
+  }
+
+  .col-12.col-md-6.col-lg-4 {
+    flex: 1 1 30%; /* 3 kolone na tabletima i desktopu */
+  }
 }
 
 
@@ -710,51 +814,128 @@ body {
   #FOOTER
 \*-----------------------------------*/
 
+/* Footer */
 .footer {
-  background-color: var(--bistre);
+  background-color: var(--black);
   color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centriranje svih elemenata unutar footer-a */
+  justify-content: center;
+  text-align: center; /* Centriranje teksta */
 }
 
+/* Footer-top, koristi grid sistem sa fleksibilnim rasporedom */
 .footer-top {
   display: grid;
   gap: 20px;
-  padding-block-end: 60px;
-  border-block-end: 1px solid var(--french-bistre);
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--french-bistre);
+  grid-template-columns: 1fr; /* Početno kao jedna kolona za mobilne uređaje */
+  width: 100%; /* Osigurava da sve sekcije zauzmu celu širinu */
+  align-items: center; /* Centriranje sadržaja unutar grid-a */
 }
 
+/* Logo stil */
 .footer .logo {
   color: var(--french-bistre);
   font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 20px; /* Razmak ispod loga */
 }
 
-.footer-brand .footer-text { margin-block: 40px; }
+/* Footer brand (tekst u brand sekciji) */
+.footer-brand .footer-text {
+  margin-block: 40px;
+  font-size: 2rem;
+  max-width: 400px; /* Ograničava širinu teksta da ne bude preširok */
+  margin-left: auto;
+  margin-right: auto;
+}
 
+/* Socijalne ikone */
 .social-list {
   display: flex;
   gap: 20px;
+  justify-content: center; /* Centriranje ikona */
+  margin-top: 20px;
 }
 
 .social-link {
   color: var(--white);
   font-size: 3rem;
+  transition: color 0.3s ease;
 }
 
+.social-link:hover {
+  color: var(--french-bistre); /* Menjanje boje na hover */
+}
+
+/* Footer-list-title */
 .footer-list-title {
   color: var(--french-bistre);
   font-family: var(--ff-rosario);
   font-size: 2.5rem;
   font-weight: var(--fw-700);
-  margin-block-end: 20px;
+  margin-bottom: 20px;
 }
 
-.footer-link { padding-block: 10px; }
+/* Stil za footer linkove */
+.footer-link {
+  padding-block: 10px;
+  text-decoration: none;
+  color: var(--white);
+  display: block;
+}
 
-.footer-list .footer-text { margin-block-end: 50px; }
+.footer-link:hover {
+  color: var(--black);
+}
 
+/* Footer bottom */
 .footer-bottom {
   padding-block: 20px;
   text-align: center;
+  font-size: 1.1rem;
 }
+
+/* Prilagodba za veće ekrane */
+@media (min-width: 768px) {
+  .footer-top {
+    grid-template-columns: repeat(3, 1fr); /* Tri kolone na tabletima i desktopu */
+    text-align: center; /* Centriranje teksta na većim ekranima */
+  }
+
+  .footer-list,
+  .footer-brand {
+    text-align: center; /* Centriranje na širem ekranu */
+  }
+}
+
+/* Prilagodba za mobilne uređaje */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr; /* Sve sekcije ispod jedna druge na manjim ekranima */
+  }
+
+  .footer .logo {
+    font-size: 3rem; /* Manja veličina fonta na mobilnim uređajima */
+  }
+
+  .footer-list-title {
+    font-size: 3rem; /* Manji naslovi */
+  }
+
+  .footer-text,
+  .footer-link {
+    font-size: 2rem; /* Prilagoditi veličinu fonta za mobilne uređaje */
+  }
+
+  .footer-bottom {
+    font-size: 2.5rem;
+  }
+}
+
 
 
 /*
